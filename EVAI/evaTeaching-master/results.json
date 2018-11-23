@@ -1,0 +1,27 @@
+[
+ {
+  "strat_name": "Always deceive",
+  "score": 17043833,
+  "author_name": "Martin Pilat"
+ },
+ {
+  "strat_name": "MyStrategy",
+  "score": 14390850,
+  "author_name": "Petra Doubravová"
+ },
+ {
+  "strat_name": "Random",
+  "score": 12452811,
+  "author_name": "Martin Pilat"
+ },
+ {
+  "strat_name": "Tit for Tat",
+  "score": 12391092,
+  "author_name": "Martin Pilat"
+ },
+ {
+  "strat_name": "Always cooperate",
+  "score": 11577195,
+  "author_name": "Martin Pilat"
+ }
+]
