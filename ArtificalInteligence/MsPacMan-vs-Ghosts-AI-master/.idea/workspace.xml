@@ -4,42 +4,22 @@
     <list default="true" id="be2fa56e-bdb6-4a90-9613-8bbd576e49f0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/PacMan-vs-Ghosts-Agents/src/game/controllers/pacman/examples/MazeProblem.java" afterPath="$PROJECT_DIR$/PacMan-vs-Ghosts-Agents/src/game/controllers/pacman/examples/MazeProblem.java" />
-      <change beforePath="$PROJECT_DIR$/PacMan-vs-Ghosts-Agents/src/game/controllers/pacman/examples/MyPacMan.java" afterPath="$PROJECT_DIR$/PacMan-vs-Ghosts-Agents/src/game/controllers/pacman/examples/MyPacMan.java" />
-      <change beforePath="$PROJECT_DIR$/PacMan-vs-Ghosts/src/game/controllers/ghosts/game/GameGhosts.java" afterPath="$PROJECT_DIR$/PacMan-vs-Ghosts/src/game/controllers/ghosts/game/GameGhosts.java" />
-      <change beforePath="$PROJECT_DIR$/out/production/MsPacMan-vs-Ghosts-AI-master/game/controllers/ghosts/game/GameGhosts.class" afterPath="$PROJECT_DIR$/out/production/MsPacMan-vs-Ghosts-AI-master/game/controllers/ghosts/game/GameGhosts.class" />
       <change beforePath="$PROJECT_DIR$/out/production/MsPacMan-vs-Ghosts-AI-master/game/controllers/pacman/examples/MazeProblem.class" afterPath="$PROJECT_DIR$/out/production/MsPacMan-vs-Ghosts-AI-master/game/controllers/pacman/examples/MazeProblem.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/MsPacMan-vs-Ghosts-AI-master/game/controllers/pacman/examples/MyPacMan.class" afterPath="$PROJECT_DIR$/out/production/MsPacMan-vs-Ghosts-AI-master/game/controllers/pacman/examples/MyPacMan.class" />
-      <change beforePath="$PROJECT_DIR$/replay.log" afterPath="$PROJECT_DIR$/replay.log" />
       <change beforePath="$PROJECT_DIR$/results/MyPacMan2.runs.avgs.csv" afterPath="$PROJECT_DIR$/results/MyPacMan2.runs.avgs.csv" />
-      <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-0-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-0-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-1-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-1-Iter-0.replay" />
-      <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-10-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-10-Iter-0.replay" />
-      <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-11-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-11-Iter-0.replay" />
-      <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-12-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-12-Iter-0.replay" />
-      <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-13-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-13-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-14-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-14-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-15-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-15-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-16-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-16-Iter-0.replay" />
-      <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-17-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-17-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-18-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-18-Iter-0.replay" />
-      <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-19-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-19-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-2-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-2-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-20-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-20-Iter-0.replay" />
-      <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-21-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-21-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-22-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-22-Iter-0.replay" />
-      <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-23-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-23-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-24-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-24-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-25-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-25-Iter-0.replay" />
-      <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-26-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-26-Iter-0.replay" />
-      <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-27-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-27-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-28-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-28-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-29-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-29-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-3-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-3-Iter-0.replay" />
-      <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-4-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-4-Iter-0.replay" />
-      <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-5-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-5-Iter-0.replay" />
-      <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-6-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-6-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-7-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-7-Iter-0.replay" />
-      <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-8-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-8-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-9-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan2-Run-9-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/results.csv" afterPath="$PROJECT_DIR$/results/results.csv" />
     </list>
@@ -69,8 +49,8 @@
       <file leaf-file-name="MazeProblem.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PacMan-vs-Ghosts-Agents/src/game/controllers/pacman/examples/MazeProblem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="128" column="65" lean-forward="false" selection-start-line="128" selection-start-column="65" selection-end-line="128" selection-end-column="65" />
+            <state relative-caret-position="407">
+              <caret line="131" column="21" lean-forward="false" selection-start-line="131" selection-start-column="21" selection-end-line="131" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#734#735#0" expanded="true" />
@@ -1017,8 +997,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PacMan-vs-Ghosts-Agents/src/game/controllers/pacman/examples/MazeProblem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="128" column="65" lean-forward="false" selection-start-line="128" selection-start-column="65" selection-end-line="128" selection-end-column="65" />
+        <state relative-caret-position="407">
+          <caret line="131" column="21" lean-forward="false" selection-start-line="131" selection-start-column="21" selection-end-line="131" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#734#735#0" expanded="true" />

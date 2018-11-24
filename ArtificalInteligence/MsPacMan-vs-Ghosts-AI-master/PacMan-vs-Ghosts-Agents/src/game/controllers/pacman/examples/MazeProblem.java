@@ -129,6 +129,6 @@ public class MazeProblem implements Problem<Integer> {
                 if(pill != -1 && game.checkPill(pill)) return 10;
                 pill = game.getPowerPillIndex(state);
                 if(pill != -1 && game.checkPowerPill(pill)) return 5;
-            return 15;
+            return 20;
     }
 }
