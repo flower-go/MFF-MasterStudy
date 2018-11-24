@@ -2,9 +2,7 @@ package game.controllers.pacman.examples;
 
 import game.core.G;
 import game.core.Game;
-import game.core.GameView;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +19,7 @@ public class MazeProblem implements Problem<Integer> {
         this.game = game;
         activePills = game.getPillIndicesActive();
         activePowerPills = game.getPowerPillIndicesActive();
-        ghostsEdible = isAnyEdibe();
+        ghostsEdible = isAnyEdible();
         ghostPos = new int [G.NUM_GHOSTS];
         for(int i = 0; i < G.NUM_GHOSTS; i++){
             ghostPos[i] = game.getCurGhostLoc(i);
@@ -51,7 +49,7 @@ public class MazeProblem implements Problem<Integer> {
 
     @Override
     public boolean isGoal(Integer state) {
-        //if(isDanger(state)) return false;
+        if(isDanger(state)) return false;
         if(state == game.getCurPacManLoc()) return false;
         int index;
        /* if(0 < activePowerPills.length ){
@@ -94,8 +92,8 @@ public class MazeProblem implements Problem<Integer> {
         for(int  i =0; i < G.NUM_GHOSTS ;i++){
             if(game.getLairTime(i) != 0)
                 break;
-            int ghostDistance = game.getGhostPathDistance(i,state);
-            if(ghostDistance < 4 && !game.isEdible(i)) return true;
+            int ghostDistance = game.getPathDistance(game.getCurGhostLoc(i),state);
+            if(ghostDistance < 20 && !game.isEdible(i)) return true;
                     }
         return false;
     }
@@ -111,7 +109,7 @@ public class MazeProblem implements Problem<Integer> {
         return -1;
     }
 
-    private boolean isAnyEdibe(){
+    private boolean isAnyEdible(){
         for(int i = 0; i < Game.NUM_GHOSTS; i++){
             if(game.isEdible(i)) return true;
         }
@@ -120,20 +118,17 @@ public class MazeProblem implements Problem<Integer> {
 
     @Override
     public int cost(Integer state, int action) {
-            int neigh = game.getNeighbour(state,action);
-            if(neigh != state){ ///zbytecne
                 int ghost = indexOf(state,ghostPos);
                 if(ghost != -1){
                     boolean pathToDanger = !game.isEdible(ghost);
-                    if(pathToDanger) return 1000*game.getNumberOfNodes()+ 100;
+                    if(pathToDanger)
+                        return 10000*game.getNumberOfNodes()+ 100;
                     else return 1;
                 }
                 int pill = game.getPillIndex(state);
                 if(pill != -1 && game.checkPill(pill)) return 10;
                 pill = game.getPowerPillIndex(state);
                 if(pill != -1 && game.checkPowerPill(pill)) return 5;
-
-            }
             return 15;
     }
 }
