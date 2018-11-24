@@ -50,7 +50,7 @@ public class GameGhosts implements IGhostsController
 	public int[] GhostState;			
 	
 	public GameGhosts() {
-		this(4, false);
+		this(1, false);
 	}
 	
 	public GameGhosts(int ghostCount) {

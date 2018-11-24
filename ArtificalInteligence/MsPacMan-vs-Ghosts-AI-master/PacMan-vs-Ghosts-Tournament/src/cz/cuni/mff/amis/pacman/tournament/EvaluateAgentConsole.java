@@ -286,7 +286,7 @@ public class EvaluateAgentConsole {
 				, "-c", "30"  // run-count
 				, "-r", "1"  // one-run-repetitions
 				, "-p", "game.controllers.pacman.examples.MyPacMan" // agent-fqcn ... requires MarioAI4J-Agents on classpath!
-				, "-i", "MyPacMan"   // agent-id
+				, "-i", "MyPacMan2"   // agent-id
 				, "-d", "./results" // result-dir"	
 		};
 	}

@@ -1,25 +1,32 @@
 package game.controllers.pacman.examples;
 
+import game.core.G;
 import game.core.Game;
+import game.core.GameView;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MazeProblem implements Problem<Integer> {
     private Game game;
-    private List<Integer> ghostPOsitions = new ArrayList<>();
     int[] activePills;
     int[] activePowerPills;
+    int[] ghostPos;
+    boolean ghostsEdible;
+
 
 
     public MazeProblem(Game game){
         this.game = game;
-        for(int i = 0; i < game.getCurLevel(); i++)
-        {
-            ghostPOsitions.add(game.getCurGhostLoc(i));
-        }
         activePills = game.getPillIndicesActive();
         activePowerPills = game.getPowerPillIndicesActive();
+        ghostsEdible = isAnyEdibe();
+        ghostPos = new int [G.NUM_GHOSTS];
+        for(int i = 0; i < G.NUM_GHOSTS; i++){
+            ghostPos[i] = game.getCurGhostLoc(i);
+        }
+
     }
 
     @Override
@@ -44,41 +51,89 @@ public class MazeProblem implements Problem<Integer> {
 
     @Override
     public boolean isGoal(Integer state) {
-
+        //if(isDanger(state)) return false;
         if(state == game.getCurPacManLoc()) return false;
+        int index;
+       /* if(0 < activePowerPills.length ){
+            index = game.getPowerPillIndex(state);
+            if(index != -1){
+                if(game.checkPowerPill(index)) return true;
+            }
 
-        //int index = game.getPillIndex(state);
-        /*if(index != -1){
-            if(game.checkPill(index)) return true;
+            return false;
+        }
+        */
+        if(ghostsEdible) {
+            index =  indexOf(state,ghostPos);
+            if(index != -1){
+                if(game.isEdible(index))
+                    return true;
+            }
+            return false;
+        }
+        // TODO HERE is the problem
+        index = game.getPillIndex(state);
+        if(index != -1){
+            if(game.checkPill(index) ) return true;
         }
         index = game.getPowerPillIndex(state);
         if(index != -1){
             if(game.checkPowerPill(index)) return true;
         }
 
-        index = ghostPOsitions.indexOf(state);
+        index = indexOf(state,ghostPos);
         if(index != -1){
             if(game.isEdible(index)) return true;
-        }*/
+        }
 
-        return true;
+        return false;
+    }
+
+    private boolean isDanger(int state){
+
+        for(int  i =0; i < G.NUM_GHOSTS ;i++){
+            if(game.getLairTime(i) != 0)
+                break;
+            int ghostDistance = game.getGhostPathDistance(i,state);
+            if(ghostDistance < 4 && !game.isEdible(i)) return true;
+                    }
+        return false;
+    }
+
+    public static <T> int indexOf(Integer needle, int[] haystack)
+    {
+        for (int i=0; i<haystack.length; i++)
+        {
+            if (haystack[i] == needle)
+                     return i;
+        }
+
+        return -1;
+    }
+
+    private boolean isAnyEdibe(){
+        for(int i = 0; i < Game.NUM_GHOSTS; i++){
+            if(game.isEdible(i)) return true;
+        }
+        return false;
     }
 
     @Override
     public int cost(Integer state, int action) {
             int neigh = game.getNeighbour(state,action);
-            int ghost = ghostPOsitions.indexOf(state);
-            if(ghost != -1){
-                boolean pathToDanger = !game.isEdible(ghost);
-                if(pathToDanger) return 200;
-                else return 1;
+            if(neigh != state){ ///zbytecne
+                int ghost = indexOf(state,ghostPos);
+                if(ghost != -1){
+                    boolean pathToDanger = !game.isEdible(ghost);
+                    if(pathToDanger) return 1000*game.getNumberOfNodes()+ 100;
+                    else return 1;
+                }
+                int pill = game.getPillIndex(state);
+                if(pill != -1 && game.checkPill(pill)) return 10;
+                pill = game.getPowerPillIndex(state);
+                if(pill != -1 && game.checkPowerPill(pill)) return 5;
+
             }
-            int pill = game.getPillIndex(state);
-            if(pill != -1 && game.checkPill(pill)) return 6;
-            pill = game.getPowerPillIndex(state);
-            if(pill != -1 && game.checkPowerPill(pill)) return 2;
-
-            return 20;
-
+            return 15;
     }
 }

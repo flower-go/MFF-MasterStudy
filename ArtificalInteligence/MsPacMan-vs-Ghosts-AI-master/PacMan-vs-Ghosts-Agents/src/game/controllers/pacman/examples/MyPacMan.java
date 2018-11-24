@@ -5,6 +5,10 @@ import game.controllers.ghosts.game.GameGhosts;
 import game.controllers.pacman.PacManHijackController;
 import game.core.G;
 import game.core.Game;
+import game.core.GameView;
+import jdk.jshell.spi.ExecutionControl;
+
+import java.awt.*;
 
 public final class MyPacMan extends PacManHijackController
 {
@@ -14,9 +18,23 @@ public final class MyPacMan extends PacManHijackController
 		// Code your agent here.
 		Problem<Integer> p = new MazeProblem(game);
 		Node<Integer> result = UCS.search(p);
-		int[] res = {result.state};
 
-		pacman.set(game.getNextPacManDir(game.getTarget(game.getCurPacManLoc(),res,true, Game.DM.PATH),true, Game.DM.PATH));
+		if(result != null){
+			int[] res = {returnDirection(result)};
+			pacman.set(game.getNextPacManDir(game.getTarget(game.getCurPacManLoc(),res,true, Game.DM.PATH),true, Game.DM.PATH));
+			int current = game.getCurPacManLoc();
+			GameView.addPoints(game,Color.CYAN,game.getPath(current,result.state));
+			int[] ghostDistances = new int[]{ game.getPathDistance(game.getCurPacManLoc(), game.getCurGhostLoc(0))};
+			GameView.addText(0, 10, Color.YELLOW, "Ghost distances: " + ghostDistances[0] + ", " + ghostDistances[1] + ", " + ghostDistances[2] + ", " + ghostDistances[3]);
+		}
+		else {
+			GameView.addText(0,20, Color.blue, "NULL");
+
+			pacman.set(0);
+		}
+
+
+
 	}
 		// Dummy implementation: move in a random direction.  You won't live long this way,
 		//int[] directions=game.getPossiblePacManDirs(false);
@@ -30,7 +48,7 @@ public final class MyPacMan extends PacManHijackController
 			second = end;
 			end = end.parent;
 		}
-		return second.action;
+		return second.state;
 	}
 		
 	public static void main(String[] args) {
