@@ -23,8 +23,8 @@ public final class MyPacMan extends PacManHijackController
 			int[] res = {returnDirection(result)};
 			pacman.set(game.getNextPacManDir(game.getTarget(game.getCurPacManLoc(),res,true, Game.DM.PATH),true, Game.DM.PATH));
 			int current = game.getCurPacManLoc();
-			//GameView.addPoints(game,Color.CYAN,game.getPath(current,result.state));
-			int[] ghostDistances = new int[]{ game.getPathDistance(game.getCurPacManLoc(), game.getCurGhostLoc(0)), game.getGhostPathDistance(0,game.getCurPacManLoc())};
+			//GameView.addPoints(game,Color.CYAN,game.getInitialGhostsPosition());
+			//int[] ghostDistances = new int[]{ game.getPathDistance(game.getCurPacManLoc(), game.getCurGhostLoc(0)), game.getGhostPathDistance(0,game.getCurPacManLoc())};
 			//GameView.addText(0, 10, Color.YELLOW, "Ghost distances: " + ghostDistances[0] + ", " + ghostDistances[1]);
 			//GameView.addText(0,20,Color.YELLOW, String.valueOf(result.cost));
 		}

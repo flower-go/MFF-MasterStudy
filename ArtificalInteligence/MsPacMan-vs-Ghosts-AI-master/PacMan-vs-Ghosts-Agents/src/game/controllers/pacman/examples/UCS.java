@@ -2,6 +2,7 @@ package game.controllers.pacman.examples;
 import java.util.*;
 
 public class UCS {
+    boolean notFear = false;
     public static <S> Node<S> search(Problem<S> prob) {
         PriorityQueue<Node<S>> frontier = new PriorityQueue<>();
         HashMap<S, Node<S>> mapping = new HashMap<>();

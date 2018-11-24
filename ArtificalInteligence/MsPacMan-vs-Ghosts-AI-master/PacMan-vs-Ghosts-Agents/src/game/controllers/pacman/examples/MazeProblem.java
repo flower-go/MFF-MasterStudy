@@ -93,7 +93,7 @@ public class MazeProblem implements Problem<Integer> {
             if(game.getLairTime(i) != 0)
                 break;
             int ghostDistance = game.getPathDistance(game.getCurGhostLoc(i),state);
-            if(ghostDistance < 20 && !game.isEdible(i)) return true;
+            if(ghostDistance < 10 && !game.isEdible(i)) return true;
                     }
         return false;
     }
@@ -118,6 +118,7 @@ public class MazeProblem implements Problem<Integer> {
 
     @Override
     public int cost(Integer state, int action) {
+                state = game.getNeighbour(state,action);
                 int ghost = indexOf(state,ghostPos);
                 if(ghost != -1){
                     boolean pathToDanger = !game.isEdible(ghost);
