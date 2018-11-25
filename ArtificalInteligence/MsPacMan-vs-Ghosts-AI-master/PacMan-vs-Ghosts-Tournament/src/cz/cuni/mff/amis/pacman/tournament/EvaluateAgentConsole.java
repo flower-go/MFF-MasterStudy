@@ -281,7 +281,7 @@ public class EvaluateAgentConsole {
 	// ==============
 	public static String[] getTestArgs() {
 		return new String[] {
-				  "-s", "14" // "seed"
+				  "-s", "40" // "seed"
 				, "-o", "-pp true -tp 1.0 -gc 4 -lc 20 -v false -2x true -p false -tt 40 -r true"   // prototype-options";
 				, "-c", "30"  // run-count
 				, "-r", "1"  // one-run-repetitions

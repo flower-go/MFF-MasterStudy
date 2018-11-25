@@ -11,7 +11,7 @@ public class MazeProblem implements Problem<Integer> {
     int[] activePills;
     int[] activePowerPills;
     int[] ghostPos;
-    boolean ghostsEdible;
+    int ghostsEdible;
 
 
 
@@ -36,7 +36,11 @@ public class MazeProblem implements Problem<Integer> {
     public List<Integer> actions(Integer state) {
         List<Integer> result = new ArrayList<>();
         for(int i = 0; i < 4; i++){
-            if(game.getNeighbour(state,i) != -1) result.add(i);
+            int neighbour= game.getNeighbour(state,i);
+            if(neighbour != -1){
+                int index = indexOf(neighbour,ghostPos);
+                if( index == -1 || game.isEdible(index)) result.add(i);
+            }
         }
 
         return result;
@@ -61,13 +65,13 @@ public class MazeProblem implements Problem<Integer> {
             return false;
         }
         */
-        if(ghostsEdible) {
+        if(0 < ghostsEdible) {
             index =  indexOf(state,ghostPos);
             if(index != -1){
-                if(game.isEdible(index) && game.getPathDistance(game.getCurGhostLoc(index),game.getCurPacManLoc()) < 60)
+                if(game.isEdible(index))
                     return true;
             }
-            //return false;
+            return false;
         }
         // TODO HERE is the problem
         index = game.getPillIndex(state);
@@ -109,11 +113,12 @@ public class MazeProblem implements Problem<Integer> {
         return -1;
     }
 
-    private boolean isAnyEdible(){
+    private int isAnyEdible(){
+        int res = 0;
         for(int i = 0; i < Game.NUM_GHOSTS; i++){
-            if(game.isEdible(i)) return true;
+            if(game.isEdible(i)) res++;
         }
-        return false;
+        return res;
     }
 
     @Override
