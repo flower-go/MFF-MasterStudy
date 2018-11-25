@@ -64,10 +64,10 @@ public class MazeProblem implements Problem<Integer> {
         if(ghostsEdible) {
             index =  indexOf(state,ghostPos);
             if(index != -1){
-                if(game.isEdible(index))
+                if(game.isEdible(index) && game.getPathDistance(game.getCurGhostLoc(index),game.getCurPacManLoc()) < 60)
                     return true;
             }
-            return false;
+            //return false;
         }
         // TODO HERE is the problem
         index = game.getPillIndex(state);

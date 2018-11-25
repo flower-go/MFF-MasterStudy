@@ -281,12 +281,12 @@ public class EvaluateAgentConsole {
 	// ==============
 	public static String[] getTestArgs() {
 		return new String[] {
-				  "-s", "20" // "seed"
+				  "-s", "14" // "seed"
 				, "-o", "-pp true -tp 1.0 -gc 4 -lc 20 -v false -2x true -p false -tt 40 -r true"   // prototype-options";
 				, "-c", "30"  // run-count
 				, "-r", "1"  // one-run-repetitions
 				, "-p", "game.controllers.pacman.examples.MyPacMan" // agent-fqcn ... requires MarioAI4J-Agents on classpath!
-				, "-i", "MyPacMan2"   // agent-id
+				, "-i", "MyPacMan3"   // agent-id
 				, "-d", "./results" // result-dir"	
 		};
 	}

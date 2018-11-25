@@ -31,7 +31,7 @@ public final class MyPacMan extends PacManHijackController
 		else {
 			//GameView.addText(0,20, Color.blue, "NULL");
 
-			pacman.set(0);
+			pacman.set(1);
 		}
 
 
