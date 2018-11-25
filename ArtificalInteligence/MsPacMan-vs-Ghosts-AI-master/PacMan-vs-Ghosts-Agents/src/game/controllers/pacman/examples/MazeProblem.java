@@ -15,11 +15,12 @@ public class MazeProblem implements Problem<Integer> {
 
 
 
-    public MazeProblem(Game game){
+    public MazeProblem(Game game, boolean edible){
         this.game = game;
         activePills = game.getPillIndicesActive();
         activePowerPills = game.getPowerPillIndicesActive();
-        ghostsEdible = isAnyEdible();
+        if(edible) ghostsEdible = isAnyEdible();
+        else ghostsEdible = false;
         ghostPos = new int [G.NUM_GHOSTS];
         for(int i = 0; i < G.NUM_GHOSTS; i++){
             ghostPos[i] = game.getCurGhostLoc(i);
@@ -36,7 +37,9 @@ public class MazeProblem implements Problem<Integer> {
     public List<Integer> actions(Integer state) {
         List<Integer> result = new ArrayList<>();
         for(int i = 0; i < 4; i++){
-            if(game.getNeighbour(state,i) != -1) result.add(i);
+            int s= game.getNeighbour(state,i);
+            int index= indexOf(s,ghostPos);
+            if(s != -1 || (index != -1 && game.isEdible(index))) result.add(i);
         }
 
         return result;
@@ -74,10 +77,7 @@ public class MazeProblem implements Problem<Integer> {
         if(index != -1){
             if(game.checkPill(index) ) return true;
         }
-        index = game.getPowerPillIndex(state);
-        if(index != -1){
-            if(game.checkPowerPill(index)) return true;
-        }
+        if(isPowerPill(state)) return true;
 
         index = indexOf(state,ghostPos);
         if(index != -1){
@@ -93,7 +93,15 @@ public class MazeProblem implements Problem<Integer> {
             if(game.getLairTime(i) != 0)
                 break;
             int ghostDistance = game.getPathDistance(game.getCurGhostLoc(i),state);
-            if(ghostDistance < 10 && !game.isEdible(i)) return true;
+            if(ghostDistance < 15 && !game.isEdible(i) && !isPowerPill(state)) return true;
+        }
+        return false;
+    }
+
+    private boolean isPowerPill(Integer state){
+        int index = game.getPowerPillIndex(state);
+        if(index != -1){
+            if(game.checkPowerPill(index)) return true;
         }
         return false;
     }
@@ -111,7 +119,8 @@ public class MazeProblem implements Problem<Integer> {
 
     private boolean isAnyEdible(){
         for(int i = 0; i < Game.NUM_GHOSTS; i++){
-            if(game.isEdible(i)) return true;
+            int distance = game.getPathDistance(game.getCurPacManLoc(),game.getCurGhostLoc(i));
+            if(game.isEdible(i) && distance <= game.getEdibleTime(i)) return true;
         }
         return false;
     }
@@ -130,6 +139,6 @@ public class MazeProblem implements Problem<Integer> {
         if(pill != -1 && game.checkPill(pill)) return 10;
         pill = game.getPowerPillIndex(state);
         if(pill != -1 && game.checkPowerPill(pill)) return 5;
-        return 20;
+        return 15;
     }
 }

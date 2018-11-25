@@ -16,22 +16,19 @@ public final class MyPacMan extends PacManHijackController
 	public void tick(Game game, long timeDue) {
 
 		// Code your agent here.
-		Problem<Integer> p = new MazeProblem(game);
+		Problem<Integer> p = new MazeProblem(game, true);
 		Node<Integer> result = UCS.search(p);
 
 		if(result != null){
-			int[] res = {returnDirection(result)};
-			pacman.set(game.getNextPacManDir(game.getTarget(game.getCurPacManLoc(),res,true, Game.DM.PATH),true, Game.DM.PATH));
-			int current = game.getCurPacManLoc();
-			//GameView.addPoints(game,Color.CYAN,game.getInitialGhostsPosition());
-			//int[] ghostDistances = new int[]{ game.getPathDistance(game.getCurPacManLoc(), game.getCurGhostLoc(0)), game.getGhostPathDistance(0,game.getCurPacManLoc())};
-			//GameView.addText(0, 10, Color.YELLOW, "Ghost distances: " + ghostDistances[0] + ", " + ghostDistances[1]);
-			//GameView.addText(0,20,Color.YELLOW, String.valueOf(result.cost));
+			notNull(result);
 		}
 		else {
 			//GameView.addText(0,20, Color.blue, "NULL");
-
-			pacman.set(0);
+			p = new MazeProblem(game, false);
+			result = UCS.search(p);
+			if(result != null) notNull(result);
+			else
+			pacman.set(1);
 		}
 
 
@@ -41,7 +38,15 @@ public final class MyPacMan extends PacManHijackController
 	//int[] directions=game.getPossiblePacManDirs(false);
 	//pacman.set(directions[G.rnd.nextInt(directions.length)]);
 
-
+	private void notNull(Node<Integer> result){
+		int[] res = {returnDirection(result)};
+		pacman.set(game.getNextPacManDir(game.getTarget(game.getCurPacManLoc(),res,true, Game.DM.PATH),true, Game.DM.PATH));
+		int current = game.getCurPacManLoc();
+		//GameView.addPoints(game,Color.CYAN,game.getInitialGhostsPosition());
+		//int[] ghostDistances = new int[]{ game.getPathDistance(game.getCurPacManLoc(), game.getCurGhostLoc(0)), game.getGhostPathDistance(0,game.getCurPacManLoc())};
+		//GameView.addText(0, 10, Color.YELLOW, "Ghost distances: " + ghostDistances[0] + ", " + ghostDistances[1]);
+		//GameView.addText(0,20,Color.YELLOW, String.valueOf(result.cost));
+	}
 	private int returnDirection(Node<Integer> end){
 		Node<Integer> second = end;
 		while(end.parent != null)
