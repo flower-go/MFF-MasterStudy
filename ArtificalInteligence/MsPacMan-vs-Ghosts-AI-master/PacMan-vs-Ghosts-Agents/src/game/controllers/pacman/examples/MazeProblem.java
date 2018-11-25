@@ -11,7 +11,7 @@ public class MazeProblem implements Problem<Integer> {
     int[] activePills;
     int[] activePowerPills;
     int[] ghostPos;
-    int ghostsEdible;
+    boolean ghostsEdible;
 
 
 
@@ -36,11 +36,7 @@ public class MazeProblem implements Problem<Integer> {
     public List<Integer> actions(Integer state) {
         List<Integer> result = new ArrayList<>();
         for(int i = 0; i < 4; i++){
-            int neighbour= game.getNeighbour(state,i);
-            if(neighbour != -1){
-                int index = indexOf(neighbour,ghostPos);
-                if( index == -1 || game.isEdible(index)) result.add(i);
-            }
+            if(game.getNeighbour(state,i) != -1) result.add(i);
         }
 
         return result;
@@ -65,7 +61,7 @@ public class MazeProblem implements Problem<Integer> {
             return false;
         }
         */
-        if(0 < ghostsEdible) {
+        if(ghostsEdible) {
             index =  indexOf(state,ghostPos);
             if(index != -1){
                 if(game.isEdible(index))
@@ -98,7 +94,7 @@ public class MazeProblem implements Problem<Integer> {
                 break;
             int ghostDistance = game.getPathDistance(game.getCurGhostLoc(i),state);
             if(ghostDistance < 10 && !game.isEdible(i)) return true;
-                    }
+        }
         return false;
     }
 
@@ -107,34 +103,33 @@ public class MazeProblem implements Problem<Integer> {
         for (int i=0; i<haystack.length; i++)
         {
             if (haystack[i] == needle)
-                     return i;
+                return i;
         }
 
         return -1;
     }
 
-    private int isAnyEdible(){
-        int res = 0;
+    private boolean isAnyEdible(){
         for(int i = 0; i < Game.NUM_GHOSTS; i++){
-            if(game.isEdible(i)) res++;
+            if(game.isEdible(i)) return true;
         }
-        return res;
+        return false;
     }
 
     @Override
     public int cost(Integer state, int action) {
-                state = game.getNeighbour(state,action);
-                int ghost = indexOf(state,ghostPos);
-                if(ghost != -1){
-                    boolean pathToDanger = !game.isEdible(ghost);
-                    if(pathToDanger)
-                        return 10000*game.getNumberOfNodes()+ 100;
-                    else return 1;
-                }
-                int pill = game.getPillIndex(state);
-                if(pill != -1 && game.checkPill(pill)) return 10;
-                pill = game.getPowerPillIndex(state);
-                if(pill != -1 && game.checkPowerPill(pill)) return 5;
-            return 20;
+        state = game.getNeighbour(state,action);
+        int ghost = indexOf(state,ghostPos);
+        if(ghost != -1){
+            boolean pathToDanger = !game.isEdible(ghost);
+            if(pathToDanger)
+                return 10000*game.getNumberOfNodes()+ 100;
+            else return 1;
+        }
+        int pill = game.getPillIndex(state);
+        if(pill != -1 && game.checkPill(pill)) return 10;
+        pill = game.getPowerPillIndex(state);
+        if(pill != -1 && game.checkPowerPill(pill)) return 5;
+        return 20;
     }
 }

@@ -14,7 +14,7 @@ public final class MyPacMan extends PacManHijackController
 {
 	@Override
 	public void tick(Game game, long timeDue) {
-		
+
 		// Code your agent here.
 		Problem<Integer> p = new MazeProblem(game);
 		Node<Integer> result = UCS.search(p);
@@ -31,15 +31,15 @@ public final class MyPacMan extends PacManHijackController
 		else {
 			//GameView.addText(0,20, Color.blue, "NULL");
 
-			pacman.set(1);
+			pacman.set(0);
 		}
 
 
 
 	}
-		// Dummy implementation: move in a random direction.  You won't live long this way,
-		//int[] directions=game.getPossiblePacManDirs(false);
-		//pacman.set(directions[G.rnd.nextInt(directions.length)]);
+	// Dummy implementation: move in a random direction.  You won't live long this way,
+	//int[] directions=game.getPossiblePacManDirs(false);
+	//pacman.set(directions[G.rnd.nextInt(directions.length)]);
 
 
 	private int returnDirection(Node<Integer> end){
@@ -51,7 +51,7 @@ public final class MyPacMan extends PacManHijackController
 		}
 		return second.state;
 	}
-		
+
 	public static void main(String[] args) {
 		PacManSimulator.play(new MyPacMan(), new GameGhosts());
 	}

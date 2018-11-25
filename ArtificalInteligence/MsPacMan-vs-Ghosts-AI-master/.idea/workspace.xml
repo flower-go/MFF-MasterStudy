@@ -4,15 +4,14 @@
     <list default="true" id="be2fa56e-bdb6-4a90-9613-8bbd576e49f0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/PacMan-vs-Ghosts-Agents/src/game/controllers/pacman/examples/MazeProblem.java" afterPath="$PROJECT_DIR$/PacMan-vs-Ghosts-Agents/src/game/controllers/pacman/examples/MazeProblem.java" />
-      <change beforePath="$PROJECT_DIR$/PacMan-vs-Ghosts-Tournament/src/cz/cuni/mff/amis/pacman/tournament/EvaluateAgentConsole.java" afterPath="$PROJECT_DIR$/PacMan-vs-Ghosts-Tournament/src/cz/cuni/mff/amis/pacman/tournament/EvaluateAgentConsole.java" />
-      <change beforePath="$PROJECT_DIR$/out/production/MsPacMan-vs-Ghosts-AI-master/cz/cuni/mff/amis/pacman/tournament/EvaluateAgentConsole.class" afterPath="$PROJECT_DIR$/out/production/MsPacMan-vs-Ghosts-AI-master/cz/cuni/mff/amis/pacman/tournament/EvaluateAgentConsole.class" />
+      <change beforePath="$PROJECT_DIR$/PacMan-vs-Ghosts-Agents/src/game/controllers/pacman/examples/MyPacMan.java" afterPath="$PROJECT_DIR$/PacMan-vs-Ghosts-Agents/src/game/controllers/pacman/examples/MyPacMan.java" />
       <change beforePath="$PROJECT_DIR$/out/production/MsPacMan-vs-Ghosts-AI-master/game/controllers/pacman/examples/MazeProblem.class" afterPath="$PROJECT_DIR$/out/production/MsPacMan-vs-Ghosts-AI-master/game/controllers/pacman/examples/MazeProblem.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/MsPacMan-vs-Ghosts-AI-master/game/controllers/pacman/examples/MyPacMan.class" afterPath="$PROJECT_DIR$/out/production/MsPacMan-vs-Ghosts-AI-master/game/controllers/pacman/examples/MyPacMan.class" />
       <change beforePath="$PROJECT_DIR$/replay.log" afterPath="$PROJECT_DIR$/replay.log" />
       <change beforePath="$PROJECT_DIR$/results/MyPacMan3.runs.avgs.csv" afterPath="$PROJECT_DIR$/results/MyPacMan3.runs.avgs.csv" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-0-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-0-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-1-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-1-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-10-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-10-Iter-0.replay" />
-      <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-11-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-11-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-12-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-12-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-13-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-13-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-14-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-14-Iter-0.replay" />
@@ -26,19 +25,15 @@
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-21-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-21-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-22-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-22-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-23-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-23-Iter-0.replay" />
-      <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-24-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-24-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-25-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-25-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-26-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-26-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-27-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-27-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-28-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-28-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-29-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-29-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-3-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-3-Iter-0.replay" />
-      <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-4-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-4-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-5-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-5-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-6-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-6-Iter-0.replay" />
-      <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-7-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-7-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-8-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-8-Iter-0.replay" />
-      <change beforePath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-9-Iter-0.replay" afterPath="$PROJECT_DIR$/results/replays/MyPacMan3-Run-9-Iter-0.replay" />
       <change beforePath="$PROJECT_DIR$/results/results.csv" afterPath="$PROJECT_DIR$/results/results.csv" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,25 +45,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="MyPacMan.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MyPacMan.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PacMan-vs-Ghosts-Agents/src/game/controllers/pacman/examples/MyPacMan.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="39" column="36" lean-forward="false" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+            <state relative-caret-position="477">
+              <caret line="57" column="1" lean-forward="false" selection-start-line="57" selection-start-column="1" selection-end-line="57" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1704#1705#0" expanded="true" />
-                <element signature="e#1765#1766#0" expanded="true" />
+                <element signature="e#1697#1698#0" expanded="true" />
+                <element signature="e#1758#1759#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EvaluateAgentConsole.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EvaluateAgentConsole.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PacMan-vs-Ghosts-Tournament/src/cz/cuni/mff/amis/pacman/tournament/EvaluateAgentConsole.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="297" column="29" lean-forward="true" selection-start-line="297" selection-start-column="29" selection-end-line="297" selection-end-column="29" />
+            <state relative-caret-position="108">
+              <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -87,14 +82,14 @@
       <file leaf-file-name="MazeProblem.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PacMan-vs-Ghosts-Agents/src/game/controllers/pacman/examples/MazeProblem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="41" column="57" lean-forward="false" selection-start-line="41" selection-start-column="57" selection-end-line="41" selection-end-column="57" />
+            <state relative-caret-position="438">
+              <caret line="134" column="1" lean-forward="false" selection-start-line="134" selection-start-column="1" selection-end-line="134" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#730#731#0" expanded="true" />
-                <element signature="e#775#776#0" expanded="true" />
-                <element signature="e#1267#1268#0" expanded="true" />
-                <element signature="e#1321#1322#0" expanded="true" />
+                <element signature="e#734#735#0" expanded="true" />
+                <element signature="e#779#780#0" expanded="true" />
+                <element signature="e#1104#1105#0" expanded="true" />
+                <element signature="e#1158#1159#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -165,8 +160,8 @@
         <option value="$PROJECT_DIR$/PacMan-vs-Ghosts-Agents/src/game/controllers/pacman/examples/DangerProblem.java" />
         <option value="$PROJECT_DIR$/PacMan-vs-Ghosts/src/game/controllers/ghosts/game/GameGhosts.java" />
         <option value="$PROJECT_DIR$/PacMan-vs-Ghosts-Agents/src/game/controllers/pacman/examples/UCS.java" />
-        <option value="$PROJECT_DIR$/PacMan-vs-Ghosts-Agents/src/game/controllers/pacman/examples/MyPacMan.java" />
         <option value="$PROJECT_DIR$/PacMan-vs-Ghosts-Tournament/src/cz/cuni/mff/amis/pacman/tournament/EvaluateAgentConsole.java" />
+        <option value="$PROJECT_DIR$/PacMan-vs-Ghosts-Agents/src/game/controllers/pacman/examples/MyPacMan.java" />
         <option value="$PROJECT_DIR$/PacMan-vs-Ghosts-Agents/src/game/controllers/pacman/examples/MazeProblem.java" />
       </list>
     </option>
@@ -772,10 +767,10 @@
           <caret line="66" column="40" lean-forward="false" selection-start-line="66" selection-start-column="40" selection-end-line="66" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#730#731#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
-            <element signature="e#1267#1268#0" expanded="true" />
-            <element signature="e#1321#1322#0" expanded="true" />
+            <element signature="e#734#735#0" expanded="true" />
+            <element signature="e#779#780#0" expanded="true" />
+            <element signature="e#1104#1105#0" expanded="true" />
+            <element signature="e#1158#1159#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -786,8 +781,8 @@
           <caret line="39" column="36" lean-forward="false" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1704#1705#0" expanded="true" />
-            <element signature="e#1765#1766#0" expanded="true" />
+            <element signature="e#1697#1698#0" expanded="true" />
+            <element signature="e#1758#1759#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -806,8 +801,8 @@
           <caret line="33" column="24" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1704#1705#0" expanded="true" />
-            <element signature="e#1765#1766#0" expanded="true" />
+            <element signature="e#1697#1698#0" expanded="true" />
+            <element signature="e#1758#1759#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -834,10 +829,10 @@
           <caret line="66" column="118" lean-forward="false" selection-start-line="66" selection-start-column="118" selection-end-line="66" selection-end-column="118" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#730#731#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
-            <element signature="e#1267#1268#0" expanded="true" />
-            <element signature="e#1321#1322#0" expanded="true" />
+            <element signature="e#734#735#0" expanded="true" />
+            <element signature="e#779#780#0" expanded="true" />
+            <element signature="e#1104#1105#0" expanded="true" />
+            <element signature="e#1158#1159#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -848,8 +843,8 @@
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1704#1705#0" expanded="true" />
-            <element signature="e#1765#1766#0" expanded="true" />
+            <element signature="e#1697#1698#0" expanded="true" />
+            <element signature="e#1758#1759#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -876,10 +871,10 @@
           <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#730#731#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
-            <element signature="e#1267#1268#0" expanded="true" />
-            <element signature="e#1321#1322#0" expanded="true" />
+            <element signature="e#734#735#0" expanded="true" />
+            <element signature="e#779#780#0" expanded="true" />
+            <element signature="e#1104#1105#0" expanded="true" />
+            <element signature="e#1158#1159#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -898,8 +893,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1704#1705#0" expanded="true" />
-            <element signature="e#1765#1766#0" expanded="true" />
+            <element signature="e#1697#1698#0" expanded="true" />
+            <element signature="e#1758#1759#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -910,10 +905,10 @@
           <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#730#731#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
-            <element signature="e#1267#1268#0" expanded="true" />
-            <element signature="e#1321#1322#0" expanded="true" />
+            <element signature="e#734#735#0" expanded="true" />
+            <element signature="e#779#780#0" expanded="true" />
+            <element signature="e#1104#1105#0" expanded="true" />
+            <element signature="e#1158#1159#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -939,8 +934,8 @@
           <caret line="15" column="45" lean-forward="false" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1704#1705#0" expanded="true" />
-            <element signature="e#1765#1766#0" expanded="true" />
+            <element signature="e#1697#1698#0" expanded="true" />
+            <element signature="e#1758#1759#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -951,10 +946,10 @@
           <caret line="65" column="17" lean-forward="false" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#730#731#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
-            <element signature="e#1267#1268#0" expanded="true" />
-            <element signature="e#1321#1322#0" expanded="true" />
+            <element signature="e#734#735#0" expanded="true" />
+            <element signature="e#779#780#0" expanded="true" />
+            <element signature="e#1104#1105#0" expanded="true" />
+            <element signature="e#1158#1159#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -989,8 +984,8 @@
           <caret line="15" column="45" lean-forward="false" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1704#1705#0" expanded="true" />
-            <element signature="e#1765#1766#0" expanded="true" />
+            <element signature="e#1697#1698#0" expanded="true" />
+            <element signature="e#1758#1759#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1009,10 +1004,10 @@
           <caret line="46" column="49" lean-forward="false" selection-start-line="46" selection-start-column="49" selection-end-line="46" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#730#731#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
-            <element signature="e#1267#1268#0" expanded="true" />
-            <element signature="e#1321#1322#0" expanded="true" />
+            <element signature="e#734#735#0" expanded="true" />
+            <element signature="e#779#780#0" expanded="true" />
+            <element signature="e#1104#1105#0" expanded="true" />
+            <element signature="e#1158#1159#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1172,37 +1167,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PacMan-vs-Ghosts-Agents/src/game/controllers/pacman/examples/MyPacMan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="39" column="36" lean-forward="false" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1704#1705#0" expanded="true" />
-            <element signature="e#1765#1766#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PacMan-vs-Ghosts-Agents/src/game/controllers/pacman/examples/MazeProblem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="41" column="57" lean-forward="false" selection-start-line="41" selection-start-column="57" selection-end-line="41" selection-end-column="57" />
+        <state relative-caret-position="438">
+          <caret line="134" column="1" lean-forward="false" selection-start-line="134" selection-start-column="1" selection-end-line="134" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#730#731#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
-            <element signature="e#1267#1268#0" expanded="true" />
-            <element signature="e#1321#1322#0" expanded="true" />
+            <element signature="e#734#735#0" expanded="true" />
+            <element signature="e#779#780#0" expanded="true" />
+            <element signature="e#1104#1105#0" expanded="true" />
+            <element signature="e#1158#1159#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PacMan-vs-Ghosts-Tournament/src/cz/cuni/mff/amis/pacman/tournament/EvaluateAgentConsole.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="297" column="29" lean-forward="true" selection-start-line="297" selection-start-column="29" selection-end-line="297" selection-end-column="29" />
+        <state relative-caret-position="108">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PacMan-vs-Ghosts-Agents/src/game/controllers/pacman/examples/MyPacMan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="57" column="1" lean-forward="false" selection-start-line="57" selection-start-column="1" selection-end-line="57" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1697#1698#0" expanded="true" />
+            <element signature="e#1758#1759#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
