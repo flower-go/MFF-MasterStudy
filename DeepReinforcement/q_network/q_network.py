@@ -67,7 +67,8 @@ class Network:
             self.predicted_values = tf.layers.dense(hidden, num_actions)
 
             # Training
-            loss = tf.losses.mean_squared_error(self.q_values, tf.boolean_mask(self.predicted_values, tf.one_hot(self.actions, num_actions)))
+            onehot = tf.one_hot(self.actions, num_actions)
+            loss = tf.losses.mean_squared_error(self.q_values, tf.boolean_mask(self.predicted_values, onehot))
             global_step = tf.train.create_global_step()
             self.training = tf.train.AdamOptimizer(args.learning_rate).minimize(loss, global_step=global_step, name="training")
 

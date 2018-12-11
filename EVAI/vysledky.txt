@@ -1,0 +1,22 @@
+puvodni-----------------------------------------------
+run 0: best objective=1.0687828932987031E-7
+run 1: best objective=4.480779125515255E-8
+run 2: best objective=2.2770409913164258E-7
+run 3: best objective=8.22653216658864E-7
+run 4: best objective=5.1088932195852976E-8
+run 5: best objective=4.3612828903860645E-9
+run 6: best objective=1.1282915934884841E-7
+run 7: best objective=2.481185390479368E-8
+run 8: best objective=4.756478233503003E-8
+run 9: best objective=3.066516995886559E-8
+s sigma 1 lesajici by 0.9-----------------------------------
+run 0: best objective=1.783888858644282
+run 1: best objective=6.109922777838037
+run 2: best objective=1.7545384582280903
+run 3: best objective=0.23192692696092365
+run 4: best objective=1.4511850661516092
+run 5: best objective=0.44008067885437185
+run 6: best objective=1.6873344101167334
+run 7: best objective=2.805747009972734
+run 8: best objective=2.254377205819715
+run 9: best objective=0.9609234430948348

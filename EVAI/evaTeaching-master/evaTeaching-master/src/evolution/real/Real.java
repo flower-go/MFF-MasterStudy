@@ -3,8 +3,7 @@ package evolution.real;
 import evolution.*;
 import evolution.individuals.Individual;
 import evolution.individuals.RealIndividual;
-import evolution.operators.AveragingCrossoverOperator;
-import evolution.operators.GaussianMutationOperator;
+import evolution.operators.*;
 import evolution.real.functions.*;
 import evolution.selectors.TournamentSelector;
 
@@ -38,6 +37,7 @@ public class Real {
     static String fitnessStatsFile;
     static String detailsLogPrefix;
     static int cpu_cores;
+    static double discount;
 
     public static void main(String[] args) {
 
@@ -61,32 +61,15 @@ public class Real {
         dimension = Integer.parseInt(prop.getProperty("prob.dimension", "25"));
         repeats = Integer.parseInt(prop.getProperty("xset.repeats", "10"));
         cpu_cores = Integer.parseInt(prop.getProperty("xset.cpu_cores", "1"));
+        discount = Double.parseDouble(prop.getProperty("ea.discount", "0.99"));
+
 
         ArrayList<RealFunction> functions = new ArrayList<RealFunction>();
-        functions.add(new F01SphereFunction(dimension));
-        functions.add(new F02EllipsoidalFunction(dimension));
-        functions.add(new F03RastriginFunction(dimension));
-        functions.add(new F04BucheRastriginFunction(dimension));
-        functions.add(new F05LinearSlope(dimension));
-        functions.add(new F06AttractiveSectorFunction(dimension));
-        functions.add(new F07StepEllipsoidalFunction(dimension));
-        functions.add(new F08RosenbrockOriginalFunction(dimension));
-        functions.add(new F09RosenbrockRotatedFunction(dimension));
-        functions.add(new F10EllipsoidalRotatedFunction(dimension));
-        functions.add(new F11DiscusFunction(dimension));
-        functions.add(new F12BentCigarFunction(dimension));
-        functions.add(new F13SharpRidgeFunction(dimension));
-        functions.add(new F14DifferentPowersFunction(dimension));
-        functions.add(new F15RastriginNonseparableFunction(dimension));
-        functions.add(new F16WeierstrassFunction(dimension));
-        functions.add(new F17SchaffersF7Function(dimension));
-        functions.add(new F18SchaffersF7IllConditionedFunction(dimension));
-        functions.add(new F19CompositeGriewankRosenbrockF8F2Function(dimension));
-        functions.add(new F20SchwefelFunction(dimension));
-        functions.add(new F21GallaghersGaussian101PeaksFunction(dimension));
-        functions.add(new F22GallaghersGaussian21HiPeaksFunction(dimension));
+        //functions.add(new F01SphereFunction(dimension));
+        //functions.add(new F07StepEllipsoidalFunction(dimension));
+        //functions.add(new F11DiscusFunction(dimension));
+        //functions.add(new F16WeierstrassFunction(dimension));
         functions.add(new F23KatsuuraFunction(dimension));
-        functions.add(new F24LunacekBiRastriginFunction(dimension));
 
         DetailsLogger.disableLog();
 
@@ -154,7 +137,8 @@ public class Real {
             ea.setCPUCores(cpu_cores);
             ea.addMatingSelector(new MySelector());
             ea.addOperator(new AveragingCrossoverOperator(xoverProb));
-            ea.addOperator(new GaussianMutationOperator(mutProb, mutProbPerBit, mutSigma));
+            ea.addOperator(new MyMutationOperator(mutProb, mutProbPerBit, mutSigma, discount));
+            //ea.addOperator(new PolynomialMutationOperator(mutProb,mutProbPerBit));
             ea.setFitnessFunction(new RealFitnessFunction(rf));
             ea.addEnvironmentalSelector(new TournamentSelector());
             ea.setElite(eliteSize);

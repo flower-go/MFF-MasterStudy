@@ -1,0 +1,9 @@
+-f C:\Users\doubr\Documents\SCHOOL\MFF\MFF-Mgr\EVAI\evaTeaching-master\evaTeaching-master\real2\F01SphereFunction\realLog2.objective_stats C:\Users\doubr\Documents\SCHOOL\MFF\MFF-Mgr\EVAI\realDefault\realDefault\F01SphereFunction\realLog.objective_stats
+
+-f C:\Users\doubr\Documents\SCHOOL\MFF\MFF-Mgr\EVAI\evaTeaching-master\evaTeaching-master\real2\F07StepEllipsoidalFunction\realLog2.objective_stats C:\Users\doubr\Documents\SCHOOL\MFF\MFF-Mgr\EVAI\realDefault\realDefault\F07StepEllipsoidalFunction\realLog.objective_stats
+
+-f C:\Users\doubr\Documents\SCHOOL\MFF\MFF-Mgr\EVAI\evaTeaching-master\evaTeaching-master\real3\F11DiscusFunction\realLog3.objective_stats C:\Users\doubr\Documents\SCHOOL\MFF\MFF-Mgr\EVAI\realDefault\realDefault\F11DiscusFunction\realLog.objective_stats C:\Users\doubr\Documents\SCHOOL\MFF\MFF-Mgr\EVAI\evaTeaching-master\evaTeaching-master\real2\F11DiscusFunction\realLog2.objective_stats
+
+-f C:\Users\doubr\Documents\SCHOOL\MFF\MFF-Mgr\EVAI\evaTeaching-master\evaTeaching-master\real2\F23KatsuuraFunction\realLog2.objective_stats C:\Users\doubr\Documents\SCHOOL\MFF\MFF-Mgr\EVAI\realDefault\realDefault\F23KatsuuraFunction\realLog.objective_stats
+
+F23KatsuuraFunction
