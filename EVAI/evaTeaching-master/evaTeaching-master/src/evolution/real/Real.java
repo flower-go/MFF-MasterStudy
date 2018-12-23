@@ -38,6 +38,9 @@ public class Real {
     static String detailsLogPrefix;
     static int cpu_cores;
     static double discount;
+    static double F;
+    static double CR;
+    static boolean randomF;
 
     public static void main(String[] args) {
 
@@ -62,14 +65,17 @@ public class Real {
         repeats = Integer.parseInt(prop.getProperty("xset.repeats", "10"));
         cpu_cores = Integer.parseInt(prop.getProperty("xset.cpu_cores", "1"));
         discount = Double.parseDouble(prop.getProperty("ea.discount", "0.99"));
+        F = Double.parseDouble(prop.getProperty("ea.F"));
+        CR = Double.parseDouble(prop.getProperty("ea.CR"));
+        randomF = Boolean.parseBoolean(prop.getProperty("ea.randomF"));
 
 
         ArrayList<RealFunction> functions = new ArrayList<RealFunction>();
-        //functions.add(new F01SphereFunction(dimension));
-        //functions.add(new F07StepEllipsoidalFunction(dimension));
-        //functions.add(new F11DiscusFunction(dimension));
-        //functions.add(new F16WeierstrassFunction(dimension));
+        functions.add(new F01SphereFunction(dimension));
+        functions.add(new F07StepEllipsoidalFunction(dimension));
         functions.add(new F23KatsuuraFunction(dimension));
+        functions.add(new F11DiscusFunction(dimension));
+        functions.add(new F16WeierstrassFunction(dimension));
 
         DetailsLogger.disableLog();
 
@@ -135,10 +141,11 @@ public class Real {
 
             EvolutionaryAlgorithm ea = new EvolutionaryAlgorithm();
             ea.setCPUCores(cpu_cores);
-            ea.addMatingSelector(new MySelector());
-            ea.addOperator(new AveragingCrossoverOperator(xoverProb));
-            ea.addOperator(new MyMutationOperator(mutProb, mutProbPerBit, mutSigma, discount));
+            //ea.addMatingSelector(new MySelector());
+            //ea.addOperator(new AveragingCrossoverOperator(xoverProb));
+            //ea.addOperator(new MyMutationOperator(mutProb, mutProbPerBit, mutSigma, discount));
             //ea.addOperator(new PolynomialMutationOperator(mutProb,mutProbPerBit));
+            ea.addOperator(new DifferentialMutation(mutProb,F, dimension, CR, mutProbPerBit,new RealFitnessFunction(rf), randomF));
             ea.setFitnessFunction(new RealFitnessFunction(rf));
             ea.addEnvironmentalSelector(new TournamentSelector());
             ea.setElite(eliteSize);

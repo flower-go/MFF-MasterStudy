@@ -1,0 +1,80 @@
+run 1: best objective=14.42989614649915
+run 2: best objective=10.921802149136782
+run 3: best objective=13.045267315208166
+run 4: best objective=12.818471370242598
+run 5: best objective=22.315358867708962
+run 6: best objective=10.033545673021418
+run 7: best objective=33.707205536575636
+run 8: best objective=31.56268341987704
+run 9: best objective=12.39023903968691
+
+
+run 0: best objective=17.079315886349217
+run 1: best objective=23.118188327997345
+run 2: best objective=11.938773897539983
+run 3: best objective=12.276170625946374
+run 4: best objective=9.56793213020468
+run 5: best objective=42.153895825452025
+run 6: best objective=12.658507504835644
+run 7: best objective=21.23568926994134
+run 8: best objective=23.317353262871492
+run 9: best objective=14.411762684243259
+
+run 0: best objective=17.079315886349217
+run 1: best objective=23.118188327997345
+run 2: best objective=11.938773897539983
+run 3: best objective=12.276170625946374
+run 4: best objective=9.56793213020468
+run 5: best objective=42.153895825452025
+run 6: best objective=12.658507504835644
+run 7: best objective=21.23568926994134
+run 8: best objective=23.317353262871492
+run 9: best objective=14.411762684243259
+
+run 0: best objective=9.979430152530858
+run 1: best objective=27.762935774102147
+run 2: best objective=5.502450210221646
+run 3: best objective=29.3454799387715
+run 4: best objective=26.401593274393104
+run 5: best objective=28.829028160077577
+run 6: best objective=12.658507504829453
+run 7: best objective=27.523765420280416
+run 8: best objective=22.385134329668148
+run 9: best objective=26.141192014816596
+
+konstantní snížení pøi pøipoètení, ne výmìnì (viz wiki)
+run 0: best objective=11.682548987794922
+run 1: best objective=14.077198942882413
+run 2: best objective=14.26772185632113
+run 3: best objective=12.21805310563071
+run 4: best objective=21.846924549033954
+run 5: best objective=6.639973730642206
+run 6: best objective=6.385239005916405
+run 7: best objective=23.141862337134693
+run 8: best objective=11.96726617420639
+run 9: best objective=19.19198591845555
+
+
+bez ostatnich
+run 0: best objective=13.602649411300034
+run 1: best objective=22.26172293207166
+run 2: best objective=11.716719252499905
+run 3: best objective=23.78979804825971
+run 4: best objective=20.503189220356127
+run 5: best objective=11.521069323452439
+run 6: best objective=10.096856248422684
+run 7: best objective=29.057833114570467
+run 8: best objective=12.16147170991912
+run 9: best objective=21.220295166820684
+
+f11
+run 0: best objective=159.21506154629895
+run 1: best objective=89.10639328160443
+run 2: best objective=78.55179133271304
+run 3: best objective=121.93878076234664
+run 4: best objective=50.78737857017015
+run 5: best objective=184.66444267601997
+run 6: best objective=213.90631606328398
+run 7: best objective=44.756477026214604
+run 8: best objective=94.87126903085597
+run 9: best objective=42.70807587413037

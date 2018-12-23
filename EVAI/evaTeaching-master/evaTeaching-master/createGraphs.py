@@ -4,13 +4,13 @@ from matplotlib import pyplot as plt
 import numpy as np
 
 parser = argparse.ArgumentParser(description='Create graphs from evolution logs')
-parser.add_argument('-f', '--files', metavar='F', default='logs/basic.objective_stats', type=str, nargs='+', help='Names of the input files')
-parser.add_argument('-l', '--labels', metavar='L', default=['Mine', 'Default', 'Polynomial'], type=str, nargs='+', help='Labels for graphs from files')
+parser.add_argument('-f', '--files', metavar='F', type=str, nargs='+', help='Names of the input files')
+parser.add_argument('-l', '--labels', metavar='L', default=['Adaptive', 'Default', 'Not radnom'], type=str, nargs='+', help='Labels for graphs from files')
 parser.add_argument('--logscale', metavar='S', choices=['x', 'y', 'both'], default = 'y', help='Set logarithmic axis (x, y, or both)')
-parser.add_argument('-o', '--output', metavar='O', type=str, help='Name of the output file', default='f11_2.png')
+parser.add_argument('-o', '--output', metavar='O', type=str, help='Name of the output file', default='f23_adaptiveD.png')
 parser.add_argument('-s','--scale', metavar='N', type=int,  help='Scaling for the numbers on x-axis', default=1)
 parser.add_argument('--limit', metavar='N', type=int, default='20000', help='The upper limit for the x-axis')
-parser.add_argument('-t', '--title', metavar='T', type=str, help='The plot title', default='F11')
+parser.add_argument('-t', '--title', metavar='T', type=str, help='The plot title', default='F23')
 
 args = parser.parse_args()
 
