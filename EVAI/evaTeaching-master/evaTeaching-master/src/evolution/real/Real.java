@@ -41,6 +41,7 @@ public class Real {
     static double F;
     static double CR;
     static boolean randomF;
+    static double temperature;
 
     public static void main(String[] args) {
 
@@ -68,6 +69,7 @@ public class Real {
         F = Double.parseDouble(prop.getProperty("ea.F"));
         CR = Double.parseDouble(prop.getProperty("ea.CR"));
         randomF = Boolean.parseBoolean(prop.getProperty("ea.randomF"));
+        temperature = Double.parseDouble(prop.getProperty("ea.temperature"));
 
 
         ArrayList<RealFunction> functions = new ArrayList<RealFunction>();
@@ -141,11 +143,12 @@ public class Real {
 
             EvolutionaryAlgorithm ea = new EvolutionaryAlgorithm();
             ea.setCPUCores(cpu_cores);
-            //ea.addMatingSelector(new MySelector());
-            //ea.addOperator(new AveragingCrossoverOperator(xoverProb));
+            ea.addMatingSelector(new MySelector());
+            ea.addOperator(new AveragingCrossoverOperator(xoverProb));
             //ea.addOperator(new MyMutationOperator(mutProb, mutProbPerBit, mutSigma, discount));
             //ea.addOperator(new PolynomialMutationOperator(mutProb,mutProbPerBit));
-            ea.addOperator(new DifferentialMutation(mutProb,F, dimension, CR, mutProbPerBit,new RealFitnessFunction(rf), randomF));
+            //ea.addOperator(new DifferentialMutation(mutProb,F, dimension, CR, mutProbPerBit,new RealFitnessFunction(rf), randomF));
+            ea.addOperator(new SimulatedAnnealingMutation(temperature,mutSigma,mutProb,mutProbPerBit,new RealFitnessFunction(rf)));
             ea.setFitnessFunction(new RealFitnessFunction(rf));
             ea.addEnvironmentalSelector(new TournamentSelector());
             ea.setElite(eliteSize);
