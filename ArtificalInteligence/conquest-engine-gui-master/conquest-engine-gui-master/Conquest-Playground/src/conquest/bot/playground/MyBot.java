@@ -27,6 +27,7 @@ public class MyBot extends GameBot
 	
 	FightAttackersResults attackResults;
     Pair<List<PlaceCommand>,List<MoveCommand>> thisTurn = new Pair<>(null,null);
+    double winProbability = 0.8;
 
 	public MyBot() {
 		attackResults = FightAttackersResults.loadFromFile(Util.file(
@@ -203,7 +204,7 @@ public class MyBot extends GameBot
         for (Pair<RegionState,RegionState> pair:continents
                 ) {
             //int needed = pair.getValue().armies*2;
-            int needed = getRequiredSoldiersToConquerRegion(pair.getKey(),pair.getValue(),0.85);
+            int needed = getRequiredSoldiersToConquerRegion(pair.getValue().armies,winProbability,copyS.get(pair.getKey()).armies + available);
             int add = needed - copyS.get(pair.getKey()).armies+1;
             if(add <= available)
             {
@@ -235,7 +236,7 @@ public class MyBot extends GameBot
                     ) {
                 if(copyS.keySet().contains(region))
                 {
-                    int needed = getRequiredSoldiersToConquerRegion(region,continent,0.85);
+                    int needed = getRequiredSoldiersToConquerRegion(continent.armies,winProbability,copyS.get(region).armies + available);
                     int add = needed - copyS.get(region).getArmies()+1;
                     if(add <= available)
                     {
@@ -269,7 +270,7 @@ public class MyBot extends GameBot
                 ) {
             if(!copyS.keySet().contains(pair.getKey())) continue;
             if(!unused.contains(pair.getValue())) continue;
-            int needed = getRequiredSoldiersToConquerRegion(pair.getKey(),pair.getValue(),0.85);
+            int needed = getRequiredSoldiersToConquerRegion(pair.getValue().armies,winProbability,copyS.get(pair.getKey()).armies + available);
             int add = needed - copyS.get(pair.getKey()).getArmies()+1;
             if(add <= available)
             {
@@ -304,7 +305,7 @@ public class MyBot extends GameBot
                     ) {
                 if(pouzitelne.contains(region))
                 {
-                    int needed = getRequiredSoldiersToConquerRegion(region,continent,0.85);
+                    int needed = getRequiredSoldiersToConquerRegion(continent.armies,winProbability,copyS.get(region).armies + available);
                     int add = needed - copyS.get(region).armies+1;
                     if(add <= available)
                     {
@@ -423,17 +424,14 @@ public class MyBot extends GameBot
     }
 
 
-    private int getRequiredSoldiersToConquerRegion(RegionState from, RegionState to, double winProbability) {
-        int attackers = from.armies - 1;
-        int defenders = to.armies;
+    private int getRequiredSoldiersToConquerRegion(int defenders, double winProbability, int max) {
 
-        for (int a = defenders; a <= attackers; ++a) {
+        for (int a = 1; a <= max; ++a) {
             double chance = attackResults.getAttackersWinChance(a, defenders);
             if (chance >= winProbability) {
                 return a;
             }
         }
-
         return Integer.MAX_VALUE;
     }
 
