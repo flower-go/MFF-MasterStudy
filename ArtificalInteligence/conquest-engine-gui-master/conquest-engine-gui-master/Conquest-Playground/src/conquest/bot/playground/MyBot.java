@@ -24,7 +24,7 @@ import static java.util.stream.Collectors.groupingBy;
 public class MyBot extends GameBot
 {
 	Random rand = new Random();
-	
+
 	FightAttackersResults attackResults;
     Pair<List<PlaceCommand>,List<MoveCommand>> thisTurn = new Pair<>(null,null);
     double winProbability = 0.8;
@@ -33,19 +33,19 @@ public class MyBot extends GameBot
 		attackResults = FightAttackersResults.loadFromFile(Util.file(
 				"../Conquest-Bots/FightSimulation-Attackers-A200-D200.obj"));
 	}
-	
+
 	@Override
 	public void setGUI(GUI gui) {
 	}
-		
+
 	// Code your bot here.
-	
+
 	//
 	// This is a dummy implemementation that moves randomly.
 	//
-	
+
 	// Choose a starting region.
-	
+
 	@Override
 	public ChooseCommand chooseRegion(List<Region> choosable, long timeout) {
 
@@ -133,14 +133,17 @@ public class MyBot extends GameBot
             return ret;
         }
 
+        System.out.format("compute ACTIONS");
         // COMPUTE ACTIONS
         computeActions(mineStates, me.placeArmies);
 
         if(thisTurn.getKey() != null)
+        {
             return thisTurn.getKey();
-
+        }
         // RANDOM PLACING - NEMELO BY NASTAT
         else{
+            System.out.format("compute ACTIONS RANDOMLY");
             List<PlaceCommand> ret = new ArrayList<PlaceCommand>();
             int[] count = new int[numRegions];
             for (int i = 0 ; i < me.placeArmies ; ++i) {
@@ -157,7 +160,8 @@ public class MyBot extends GameBot
     }
 
     private void computeActions(List<RegionState> mineStates, int placeArmies){
-        // DEEP COPY OF MINESTATES
+
+	    // DEEP COPY OF MINESTATES
         Map<RegionState,RegionStateM> copyS =  copyStates(mineStates);
         // list of all regions which were not attacked
         List<RegionState> unused = new ArrayList<RegionState>(Arrays.asList(state.regions));
@@ -165,6 +169,7 @@ public class MyBot extends GameBot
         // results of computations
         List<PlaceCommand> resultPlace = new ArrayList<PlaceCommand>();
         List<MoveCommand> move = new ArrayList<>();
+
 
 	    //My opponent's continets I can destroy
         List<Pair<RegionState,RegionState>> continents = CanDeleteContinent(mineStates, unused);
@@ -211,11 +216,13 @@ public class MyBot extends GameBot
                 if(add > 0)
                 {
                     resultPlace.add(new PlaceCommand(pair.getKey().region,add));
+                    copyS.get(pair.getKey()).armies += add;
+                    available = available - add;
                 }
                 move.add(new MoveCommand(pair.getKey().region,pair.getValue().region,needed));
-                available = available - add;
+
                 unused.remove(pair.getValue());
-                copyS.get(pair.getKey()).armies += add;
+
                 copyS.get(pair.getKey()).armies -= needed;
             }
         }
@@ -243,12 +250,18 @@ public class MyBot extends GameBot
                         if(add > 0)
                         {
                             resultPlace.add(new PlaceCommand(region.region,add));
+                            copyS.get(region).armies += add;
+                            available = available - add;
                         }
 
+                        if(region.armies + add - needed < 1)
+                        {
+                            break;
+                        }
                         move.add(new MoveCommand(region,continent,needed));
-                        available = available - add;
+
                         unused.remove(continent);
-                        copyS.get(region).armies += add;
+
                         copyS.get(region).armies -= needed;
                     }
                 }
@@ -272,16 +285,18 @@ public class MyBot extends GameBot
             if(!unused.contains(pair.getValue())) continue;
             int needed = getRequiredSoldiersToConquerRegion(pair.getValue().armies,winProbability,copyS.get(pair.getKey()).armies + available);
             int add = needed - copyS.get(pair.getKey()).getArmies()+1;
-            if(add <= available)
+            if(add <= available )
             {
                 if(add > 0)
                 {
                     resultPlace.add(new PlaceCommand(pair.getKey().region,add));
+                    copyS.get(pair.getKey()).armies += add;
+                    available = available - add;
                 }
 
                 move.add(new MoveCommand(pair.getKey().region,pair.getValue().region,needed));
-                available = available - add;
-                copyS.get(pair.getKey()).armies += add;
+
+
                 copyS.get(pair.getKey()).armies -= needed;
                 unused.remove(pair.getValue());
             }
@@ -312,11 +327,13 @@ public class MyBot extends GameBot
                         if(add > 0)
                         {
                             resultPlace.add(new PlaceCommand(region.region,add));
+                            copyS.get(region).armies += add;
+                            available = available - add;
                         }
 
                         move.add(new MoveCommand(region,continent,needed));
-                        available = available - add;
-                        copyS.get(region).armies += add;
+
+
                         copyS.get(region).armies -= needed;
                         unused.remove(continent);
                     }
@@ -469,11 +486,11 @@ public class MyBot extends GameBot
         List<Pair<RegionState,RegionState>> result = new ArrayList<>();
 
         //ma nejake kontinenty?
-        if(state.players[2].continents.size() == 0) return result;
+        if(state.players[state.opp].continents.size() == 0) return result;
 
         //sousedim s nimi?
 
-        Map<Continent, ContinentState> continents = state.players[2].continents;
+        Map<Continent, ContinentState> continents = state.players[state.opp].continents;
 
         for (RegionState region:mineStates
              ) {
@@ -495,7 +512,7 @@ public class MyBot extends GameBot
              ) {
             for (RegionState n:r.neighbours
                  ) {
-                if(n.owner == 2 && n.armies != 0)
+                if(n.owner == state.opp && n.armies != 0)
                 {
                     return new Pair<>(r,n);
                 }
@@ -503,9 +520,9 @@ public class MyBot extends GameBot
         }
 		return null;
 	}
-	
+
 	// Decide where to move armies this turn.
-	
+
 	@Override
 	public List<MoveCommand> moveArmies(long timeout) {
 
@@ -554,28 +571,28 @@ public class MyBot extends GameBot
 
 	public static void runInternal() {
 		Config config = new Config();
-		
+
 		config.bot1Init = "internal:conquest.bot.playground.MyBot";
-		
+
 		config.bot2Init = "internal:conquest.bot.custom.AggressiveBot";
 		//config.bot2Init = "human";
-		
+
 		config.botCommandTimeoutMillis = 20 * 1000;
-		
+
 		config.game.maxGameRounds = 200;
-		
+
 		config.game.fight = FightMode.CONTINUAL_1_1_A60_D70;
-		
+
 		config.visualize = true;
-		
+
 		config.replayLog = new File("./replay.log");
-		
+
 		RunGame run = new RunGame(config);
 		run.go();
-		
+
 		System.exit(0);
 	}
-	
+
 	public static void runExternal() {
 		BotParser parser = new BotParser(new MyBot());
 		parser.setLogFile(new File("./MyBot.log"));

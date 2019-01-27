@@ -438,9 +438,9 @@ public class ConquestFightConsole {
 	
 	public static String[] getTestArgs_1v1() {
 		return new String[] {
-				  "-s", "20"     // seed
+				  "-s", "123576579"     // seed
 				, "-o", "GAME;x;x;5000;false;false;200;false;-1;true;5;100;CONTINUAL_1_1_A60_D70"   // game-config
-				, "-g", "100"      // games-count
+				, "-g", "10"      // games-count
 				, "-r", "false"   // reverse-games
 				, "-a", "MyBot"                              // bot1-id
 				, "-b", "internal:conquest.bot.playground.MyBot" // bot1-init
