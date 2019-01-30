@@ -31,7 +31,7 @@ class Expectiminimax<S, A> implements Strategy<S, A> {
     public A action(S state) {
         List<A> actions = generator.actions(state);
 
-            double max = Double.MIN_VALUE;
+            double max = - Double.MAX_VALUE;
             A actionMax= null;
 
             for (A action: actions
@@ -40,7 +40,7 @@ class Expectiminimax<S, A> implements Strategy<S, A> {
                 for (Possibility<S> p: generator.possibleResults(state,action)
                         ) {
                     try {
-                        value += p.prob* expectiminimax(p.state,maxDepth, Double.MIN_VALUE, Double.MAX_VALUE);
+                        value += p.prob* expectiminimax(p.state,maxDepth,  - Double.MAX_VALUE, Double.MAX_VALUE);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -71,16 +71,31 @@ class Expectiminimax<S, A> implements Strategy<S, A> {
             ActionScore a = computeActionScore(action,state,depth, alpha, beta);
 
             scores.add(a);
+            if(best == null){
+                best = a;
+            }
+            else if(game.player(state) == 1){
+                // return scores.get(0).score;
+                if (best.score < a.score){
+                    best = a;
+                }
+                if(best.score >= beta) return best.score;
+                alpha = alpha > best.score ? alpha: best.score;
+            }
+            else {
+                //return scores.get(scores.size() - 1).score;
+                if (best.score > a.score){
+                    best = a;
+                }
+                if(best.score <= alpha){
+                    return best.score;
+                }
+                beta = beta > best.score ? beta: best.score;
+            }
         }
+        // Collections.sort(scores);
+        return 0;
 
-        Collections.sort(scores);
-
-        if(game.player(state) == 1){
-            return scores.get(0).score;
-        }
-        else {
-            return scores.get(scores.size() - 1).score;
-        }
     }
 
     private ActionScore computeActionScore(A action, S state, int depth, double alpha, double beta){
