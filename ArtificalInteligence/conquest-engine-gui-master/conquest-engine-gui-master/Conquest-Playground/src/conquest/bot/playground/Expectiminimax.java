@@ -59,7 +59,7 @@ class Expectiminimax<S, A> implements Strategy<S, A> {
             if(depth <= 0) return evaluator.evaluate(state);
             if(game.isDone(state)) return game.outcome(state);
 
-            List<ActionScore> scores = new ArrayList<>();
+            // List<ActionScore> scores = new ArrayList<>();
 
             List<A> actions = generator.actions(state);
 
@@ -70,7 +70,7 @@ class Expectiminimax<S, A> implements Strategy<S, A> {
 
             ActionScore a = computeActionScore(action,state,depth, alpha, beta);
 
-            scores.add(a);
+            // scores.add(a);
             if(best == null){
                 best = a;
             }
@@ -82,7 +82,7 @@ class Expectiminimax<S, A> implements Strategy<S, A> {
                 if(best.score >= beta) return best.score;
                 alpha = alpha > best.score ? alpha: best.score;
             }
-            else {
+            else if (game.player(state) == 2){
                 //return scores.get(scores.size() - 1).score;
                 if (best.score > a.score){
                     best = a;
@@ -90,12 +90,12 @@ class Expectiminimax<S, A> implements Strategy<S, A> {
                 if(best.score <= alpha){
                     return best.score;
                 }
-                beta = beta > best.score ? beta: best.score;
+                beta = beta > best.score ? best.score: beta;
             }
-        }
-        // Collections.sort(scores);
-        return 0;
 
+        }
+        return best.score;
+        // Collections.sort(scores);
     }
 
     private ActionScore computeActionScore(A action, S state, int depth, double alpha, double beta){
