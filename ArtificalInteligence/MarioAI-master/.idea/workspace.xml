@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe991d69-f9cd-47a8-b39a-072ecd145041" name="Default" comment="31.5% na seedu 14">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/../../EVAI/evaTeaching-master/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../EVAI/evaTeaching-master/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/../conquest-engine-gui-master/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../conquest-engine-gui-master/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/../conquest-engine-gui-master/out/production/conquest-engine-gui-master/conquest/bot/playground/Expectiminimax.class" afterPath="$PROJECT_DIR$/../conquest-engine-gui-master/out/production/conquest-engine-gui-master/conquest/bot/playground/Expectiminimax.class" />
+      <change beforePath="$PROJECT_DIR$/../conquest-engine-gui-master/out/production/conquest-engine-gui-master/conquest/tournament/ConquestFightConsole.class" afterPath="$PROJECT_DIR$/../conquest-engine-gui-master/out/production/conquest-engine-gui-master/conquest/tournament/ConquestFightConsole.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -205,6 +206,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -215,6 +220,32 @@
             <path>
               <item name="MarioAI-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="MarioAI4J-Agents" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MarioAI-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MarioAI4J-Agents" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MarioAI-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MarioAI4J-Agents" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MarioAI-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MarioAI4J-Playground" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MarioAI-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MarioAI4J-Playground" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MarioAI-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MarioAI4J-Playground" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="mario" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MarioAI-master" type="b2602c69:ProjectViewProjectNode" />
@@ -233,10 +264,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -469,8 +496,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1552" height="840" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -484,7 +510,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12739871" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2600536" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />

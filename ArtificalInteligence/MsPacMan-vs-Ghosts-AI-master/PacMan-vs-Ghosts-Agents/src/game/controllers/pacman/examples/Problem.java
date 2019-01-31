@@ -1,11 +1,13 @@
 package game.controllers.pacman.examples;
 import java.util.List;
 
-// S = state type
-public interface Problem<S> {
+// S = state type, A = action type
+public interface Problem<S, A> {
     S initialState();
-    List<Integer> actions(S state);
-    S result(S state, int action);
+    List<A> actions(S state);
+    S result(S state, A action);
     boolean isGoal(S state);
-    int cost(S state, int action);
+    int cost(S state, A action);
+
+    int estimate(S state);  // optimistic estimate of cost from state to goal
 }

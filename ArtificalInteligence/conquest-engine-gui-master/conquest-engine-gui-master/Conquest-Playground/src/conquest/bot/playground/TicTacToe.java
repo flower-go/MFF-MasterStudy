@@ -182,9 +182,13 @@ public class TicTacToe implements Game<TState, Integer> {
     public static void main(String[] args) {
         TicTacToe game = new TicTacToe();
 
-        Strategy<TState, Integer> emm = new Expectiminimax<>(game, new TGenerator(), new TEvaluator(), 5);
+        //Strategy<TState, Integer> emm = new Expectiminimax<>(game, new TGenerator(), new TEvaluator(), 5);
 
-        Runner.play(game, emm, new TRandomStrategy(), 500);
+        //Runner.play(game, emm, new TRandomStrategy(), 500);
+
+        Strategy<TState, Integer> emm = new Expectiminimax<>(game, new TGenerator(), new TEvaluator(), 8);
+
+        Runner.play(game, emm, new BasicStrategy(), 10);
     }
 
 }
