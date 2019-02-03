@@ -188,7 +188,7 @@ public class TicTacToe implements Game<TState, Integer> {
 
         Strategy<TState, Integer> emm = new Expectiminimax<>(game, new TGenerator(), new TEvaluator(), 8);
 
-        Runner.play(game, emm, new BasicStrategy(), 10);
+        Runner.play(game,  new BasicStrategy(), emm, 10);
     }
 
 }

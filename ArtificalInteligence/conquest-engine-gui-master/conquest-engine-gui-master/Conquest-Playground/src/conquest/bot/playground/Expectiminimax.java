@@ -46,7 +46,7 @@ class Expectiminimax<S, A> implements Strategy<S, A> {
             for (Possibility<S> p : generator.possibleResults(state, action)
                     ) {
                 try {
-                    value += p.prob * expectiminimax(p.state, maxDepth, -Double.MAX_VALUE, Double.MAX_VALUE, game.player(state) == 1);
+                    value += p.prob * expectiminimax(p.state, maxDepth, -Double.MAX_VALUE, Double.MAX_VALUE, game.player(p.state) == 1);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -114,10 +114,11 @@ class Expectiminimax<S, A> implements Strategy<S, A> {
 
     private ActionScore computeActionScore(A action, S state, int depth, double alpha, double beta) {
         double score = 0;
-        for (Possibility<S> p : generator.possibleResults(state, action)
+        List<Possibility<S>> actions = generator.possibleResults(state, action);
+        for (Possibility<S> p : actions
                 ) {
             try {
-                score += p.prob * expectiminimax(p.state, depth - 1, alpha, beta, game.player(state) == 1);
+                score += p.prob * expectiminimax(p.state, depth - 1, alpha, beta, game.player(p.state) == 1);
             } catch (Exception e) {
                 e.printStackTrace();
             }
