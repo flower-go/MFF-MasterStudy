@@ -2,6 +2,7 @@ package cz.sokoban4j.playground;
 
 import static java.lang.System.out;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import cz.sokoban4j.Sokoban;
@@ -31,13 +32,19 @@ public class MyAgent extends ArtificialAgent {
 		out.println("=================");
 		
 		// FIRE THE SEARCH
-		
+
+		Stats stats = new Stats();
+		SokobanProblem c = new SokobanProblem(board);
+		Node<BoardCompact, EDirection> n = AStar.search(c, stats);
+
 		searchedNodes = 0;
 		
 		long searchStartMillis = System.currentTimeMillis();
 		
-		List<EDirection> result = new ArrayList<EDirection>();
-		dfs(5, result); // the number marks how deep we will search (the longest plan we will consider)
+		// List<EDirection> result = new ArrayList<EDirection>();
+		// dfs(5, result); // the number marks how deep we will search (the longest plan we will consider)
+
+		List<EDirection> result = createPath(n);
 
 		long searchTime = System.currentTimeMillis() - searchStartMillis;
 		
@@ -46,19 +53,29 @@ public class MyAgent extends ArtificialAgent {
 		out.println("PERFORMANCE:   " + ((double)searchedNodes / (double)searchTime * 1000) + " nodes/sec");
 		out.println("SOLUTION:      " + (result.size() == 0 ? "NOT FOUND" : "FOUND in " + result.size() + " steps"));
 		
-		if (result.size() > 0) {
+		/*if (result.size() > 0) {
 			out.print("STEPS:         ");
 			for (EDirection winDirection : result) {
 				out.print(winDirection + " -> ");
 			}
 			out.println("BOARD SOLVED!");
-		}
+		}*/
 		out.println("=================");
 		
-		if (result.size() == 0) {
+		/*if (result.size() == 0) {
 			throw new RuntimeException("FAILED TO SOLVE THE BOARD...");
-		}
+		}*/
 				
+		return result;
+	}
+
+	private List<EDirection> createPath(Node<BoardCompact,EDirection> node){
+		List<EDirection> result = new ArrayList<EDirection>();
+		while(node != null) {
+			result.add(node.action);
+			node = node.parent;
+		}
+		Collections.reverse(result);
 		return result;
 	}
 
