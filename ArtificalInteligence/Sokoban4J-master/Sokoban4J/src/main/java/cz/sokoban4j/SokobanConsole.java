@@ -448,7 +448,7 @@ public class SokobanConsole {
 		// -----------
 		// FOR TESTING
 		// -----------
-		//args = getTestArgs();		
+		// args = getTestArgs();
 		
 		// --------------
 		// IMPLEMENTATION

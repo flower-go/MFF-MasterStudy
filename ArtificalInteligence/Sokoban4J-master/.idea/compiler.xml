@@ -6,10 +6,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="sokoban4j" />
-        <module name="sokoban4j-agents" />
-        <module name="sokoban4j-playground" />
-        <module name="sokoban4j-tournament" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="9">

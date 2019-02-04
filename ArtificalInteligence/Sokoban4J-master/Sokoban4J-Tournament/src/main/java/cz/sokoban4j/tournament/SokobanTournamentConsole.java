@@ -314,7 +314,7 @@ public class SokobanTournamentConsole {
 		// -----------
 		// FOR TESTING
 		// -----------
-		args = getTestArgs();
+		// args = getTestArgs();
 		
 		// --------------
 		// IMPLEMENTATION

@@ -54,6 +54,8 @@ class AStar<S, A> {
             S state = p.result(node.state, i);
             int cost = p.cost(node.state, i);
 
+            if(state == null)
+                continue;
             Node<S,A> podobny = m.get(state);
             if (podobny != null) {
                 if (cost + node.gn + podobny.getHn() < podobny.getFn()) {

@@ -4,12 +4,12 @@ import static java.lang.System.out;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
 import cz.sokoban4j.Sokoban;
 import cz.sokoban4j.agents.ArtificialAgent;
+import cz.sokoban4j.simulation.actions.compact.*;
 import cz.sokoban4j.simulation.SokobanResult;
 import cz.sokoban4j.simulation.actions.EDirection;
-import cz.sokoban4j.simulation.actions.compact.*;
+
 import cz.sokoban4j.simulation.board.compact.BoardCompact;
 
 /**
@@ -130,9 +130,9 @@ public class MyAgent extends ArtificialAgent {
 		
 		// VISUALIZED GAME
 		result = Sokoban.playAgentLevel("../Sokoban4J/levels/Easy/level0001.s4jl", new MyAgent());   //  5 steps required
-		//result = Sokoban.playAgentLevel("../Sokoban4J/levels/Easy/level0002.1.s4jl", new MyAgent()); // 13 steps required
-		//result = Sokoban.playAgentLevel("../Sokoban4J/levels/Easy/level0002.2.s4jl", new MyAgent()); // 25 steps required
-		//result = Sokoban.playAgentLevel("../Sokoban4J/levels/Easy/level0002.3.s4jl", new MyAgent()); // 37 steps required
+		result = Sokoban.playAgentLevel("../Sokoban4J/levels/Easy/level0002.1.s4jl", new MyAgent()); // 13 steps required
+		result = Sokoban.playAgentLevel("../Sokoban4J/levels/Easy/level0002.2.s4jl", new MyAgent()); // 25 steps required
+		result = Sokoban.playAgentLevel("../Sokoban4J/levels/Easy/level0002.3.s4jl", new MyAgent()); // 37 steps required
 
 		// HEADLESS == SIMULATED-ONLY GAME
 		//result = Sokoban.simAgentLevel("../Sokoban4J/levels/Easy/level0001.s4jl", new MyAgent());
