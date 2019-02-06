@@ -82,15 +82,55 @@ public class SokobanProblem implements Problem<BoardCompact, EDirection> {
     @Override
     public int estimate(BoardCompact state) {
         int estimate = 0;
+        List<Position> positions = new ArrayList<>();
         for (int x = 0; x < state.width(); x++) {
             for (int y = 0; y < state.height(); y++) {
                 if (CTile.isSomeBox(state.tile(x, y))) {
-                    estimate += findNearestTarget(x, y, state);
+                    // estimate += findNearestTarget(x, y, state);
+                    positions.add(new Position(x,y));
                 }
             }
 
         }
-        return estimate;
+        return pairGoals(positions, state);
+        // return estimate;
+    }
+
+
+    private int pairGoals(List<Position> positions, BoardCompact board){
+        // Map<Position,Boolean> taargets = createMap(this.taargets);
+        Queue<Position> q = new LinkedList<>();
+        q.addAll(taargets);
+
+        int result = 0;
+
+        for (Position p: positions
+             ) {
+            Position potencialGoal = q.remove();
+            int size = q.size();
+            while(!CTile.forBox(CTile.getBoxNum(board.tile(p.x,p.y)),board.tile(potencialGoal.x, potencialGoal.y)) && size > 0){
+                q.add(potencialGoal);
+                potencialGoal = q.remove();
+                size--;
+            }
+            result += manhattan(p.x, p.y,potencialGoal.x, potencialGoal.y);
+            result += manhattan(board.playerX,board.playerY,p.x, p.y);
+
+        }
+        return result - q.size()*8;
+    }
+
+    private Map<Position, Boolean> createMap(List<Position> array) {
+        Map<Position, Boolean> map = new HashMap<Position, Boolean>();
+        for(Position p : array) {
+            map.put(p,false);
+
+    }
+        return map;
+    }
+
+    private int manhattan(int x, int y, int a, int b){
+        return Math.abs(x-a) + Math.abs(y - b);
     }
 
     private int findNearestTarget(int x, int y, BoardCompact state) {
@@ -99,13 +139,13 @@ public class SokobanProblem implements Problem<BoardCompact, EDirection> {
         for (Position p : taargets
                 ) {
             if(!CTile.forBox(CTile.getBoxNum(state.tile(x,y)),state.tile(p.x, p.y))) continue;
-            int nove = Math.abs(p.x - x) + Math.abs(p.y - y);
+            int nove = manhattan(p.x, p.y,x,y);
             if (nove < length) {
                 length = nove;
                 int hracNove = Math.abs(state.playerX - x) + Math.abs(state.playerY - y);
                 hracBox = hracNove;
             }
-            
+
         }
 
         return length + hracBox;
@@ -233,5 +273,19 @@ public class SokobanProblem implements Problem<BoardCompact, EDirection> {
 
         public int x;
         public int y;
+    }
+
+    class GoalPosition{
+        public GoalPosition(int x, int y, int xG, int yG) {
+            this.x = x;
+            this.y = y;
+            this.xG = xG;
+            this.yG = yG;
+        }
+
+        public int x;
+        public int y;
+        public int xG;
+        public int yG;
     }
 }
