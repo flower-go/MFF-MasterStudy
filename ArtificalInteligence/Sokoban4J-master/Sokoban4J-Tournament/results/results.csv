@@ -1,0 +1,5 @@
+id;levelFile;levelNumber;agent;result;steps;playTimeMillis
+human;Blazz.sok;0;cz.sokoban4j.agents.HumanAgent;TIMEOUT;0;20011
+human;Blazz.sok;1;cz.sokoban4j.agents.HumanAgent;TIMEOUT;0;20012
+human;Blazz.sok;1;cz.sokoban4j.agents.HumanAgent;TIMEOUT;0;20007
+human;Blazz.sok;0;cz.sokoban4j.agents.HumanAgent;TIMEOUT;0;20001
